@@ -5,7 +5,8 @@ import Baru from "../views/Baru.vue";
 import Product from "../views/Product.vue";
 import SingleProduct from "../views/SingleProduct.vue";
 import Category from "../views/Category.vue";
-import Login from "../views/Login.vue"
+import Login from "../views/Login.vue";
+import Filter from "../views/FilterProduk.vue";
 import store from "../store";
 
 
@@ -39,6 +40,16 @@ const routes = [
         path: "/category",
         name: "Category",
         component: Category
+    },
+    {
+        path: "/category/:category",
+        name: "Filter",
+        component: Filter
+    },
+    {
+        path: "/filter",
+        name: "Filter",
+        component: Filter
     },
     {
         path: "/login",
