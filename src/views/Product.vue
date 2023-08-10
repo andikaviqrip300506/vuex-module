@@ -13,7 +13,7 @@
           <img class="h-full w-full object-cover transition-all duration-300 group-hover:scale-125" :src="product.image" alt="" />
         </div>
         <div class="absolute top-0 m-2 rounded-full bg-white">
-          <p class="rounded-full bg-emerald-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">Sale</p>
+          <p class="rounded-full bg-gray-500 p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">Sale</p>
         </div>
         <div class="my-4 mx-auto flex w-10/12 flex-col items-start justify-between">
           <div class="mb-2 flex" v-if="product.title.length < 100">
@@ -54,8 +54,8 @@
         </div>
         
         <button class="group mx-auto mb-2 flex h-10 w-10/12 items-stretch overflow-hidden rounded-md text-gray-600">
-          <div class="flex w-full items-center justify-center bg-gray-100 text-xs uppercase transition group-hover:bg-emerald-600 group-hover:text-white">Add</div>
-          <div class="flex items-center justify-center bg-gray-200 px-5 transition group-hover:bg-emerald-500 group-hover:text-white">
+          <div class="flex w-full items-center justify-center bg-gray-100 text-xs uppercase transition group-hover:bg-gray-600 group-hover:text-white">Add</div>
+          <div class="flex items-center justify-center bg-gray-200 px-5 transition group-hover:bg-gray-500 group-hover:text-white">
         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
   </svg>  <router-link :to="{name: 'SingleProduct', params: {id: product.id }}"> + </router-link></div>

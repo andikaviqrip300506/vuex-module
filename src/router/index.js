@@ -5,6 +5,8 @@ import Baru from "../views/Baru.vue";
 import Product from "../views/Product.vue";
 import SingleProduct from "../views/SingleProduct.vue";
 import Category from "../views/Category.vue";
+import Login from "../views/Login.vue"
+import store from "../store";
 
 
 const routes = [
@@ -38,6 +40,12 @@ const routes = [
         name: "Category",
         component: Category
     },
+    {
+        path: "/login",
+        name: "Login",
+        component: Login,
+        meta: { requireGuest: true },
+    },
 ];
 
 const router = createRouter({
@@ -45,4 +53,11 @@ const router = createRouter({
     routes,
 });
 
+router.beforeEach((to, from, next) => {
+    if (to.meta.requireGuest && store.getters["auth/isAuthenticated"]) {
+        next("/");
+    } else {
+        next();
+    }
+});
 export default router;

@@ -15,26 +15,47 @@
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-         <router-link to="/"><b> Home </b></router-link>
+         <router-link to="/"><b><font color="gray">Home</font></b></router-link>
         </li>
         <li>
-          <router-link to="/user"><b> User </b></router-link>
+          <router-link to="/user"><b><font color="gray">User</font></b></router-link>
         </li>
         <li>
             
-    <router-link to="/quran"><b> Quran </b></router-link>
+    <router-link to="/quran"><b><font color="gray">Quran</font></b></router-link>
         </li>
         <li>
-          <router-link to="/product"><b> Product </b></router-link>
+          <router-link to="/product"><b><font color="gray">Product</font></b></router-link>
         </li>
         <li>
-          <router-link to="/category"><b> Category </b></router-link>
+          <router-link to="/category"><b><font color="gray">Category</font></b></router-link>
         </li>
+        <li v-if="isAuthenticated">
+        <button @click="logout" class="blue"><font color="red">Log Out</font></button>
+        </li>
+        <li v-else>
+          <router-link to="/login"><b><font color="blue">Log In</font></b></router-link>
+          </li>
+
       </ul>
     </div>
-  </div>
-</nav>
+    </div>
+
+  </nav>
 <br>
   <router-view />
   
 </template>
+<script>
+import { mapActions, mapGetters } from 'vuex';
+
+export default {
+    computed: {
+        ...mapGetters('auth', ['isAuthenticated']),
+    },
+    methods: {
+        ...mapActions('auth', ['logout']),
+    },
+};
+
+</script>

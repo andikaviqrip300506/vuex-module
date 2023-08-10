@@ -6,6 +6,7 @@ import users from "./modules/users";
 import baru from "./modules/baru";
 import product from "./modules/product";
 import category from "./modules/category";
+import auth from "./modules/auth";
 
 
 const store = createStore({
@@ -20,6 +21,7 @@ const store = createStore({
         baru,
         product,
         category,
+        auth
     }
 });
 
